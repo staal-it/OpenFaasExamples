@@ -1,0 +1,12 @@
+provider:
+  name: faas
+  gateway: http://openfaas.openfaas.10.211.55.10.xip.io
+functions:
+  yourfirstfunction:
+    lang: csharp
+    handler: ./yourfirstfunction
+    image: erwinstaal/yourfirstfunction:1.1
+    environment:
+      database_url: sql.local
+    secrets:
+      - database-password
